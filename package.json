@@ -8,7 +8,7 @@
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "start-server-and-test preview http://localhost:4173/ 'cypress open --e2e'",
     "test:e2e:ci": "start-server-and-test preview http://localhost:4173/ 'cypress run --e2e'",
-    "build-only": "vite build",
+    "build-only": "vite build --base=/tv-shows/",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "deploy": "npm run build && gh-pages -d dist"
@@ -19,7 +19,6 @@
     "jquery": "^3.6.0",
     "pinia": "^2.0.16",
     "vue": "^3.2.37",
-    "vue-carousel": "^0.18.0",
     "vue-router": "^4.1.2"
   },
   "devDependencies": {
