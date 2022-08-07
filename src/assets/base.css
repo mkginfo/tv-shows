@@ -1,0 +1,29 @@
+:root {
+  --color-white: #e5e5e5;
+  --color-black: #181818;
+  --color-background: #05050e;
+  --color-background-alternative: #15152c;
+  --color-text: #e8e8e8;
+  --border-radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

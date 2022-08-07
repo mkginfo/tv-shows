@@ -1,0 +1,62 @@
+<template>
+  <div class="tv-shows-content">
+    <div class="container pt-4">
+      <!-- <MazePopular
+      v-if="popularShows.length > 0"
+      :popular-shows="popularShows"
+    />-->
+    <MazeGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
+    </div>
+  </div>
+</template>
+
+<script>
+import { getAllShows } from "@/services/ShowsService";
+import MazeGenre from "@/components/organisms/MazeGenre.vue";
+// import MazePopular from "@/components/organisms/MazePopular.vue";
+export default {
+  components: {
+    MazeGenre
+  },
+  data() {
+    return {
+      popularShows: [],
+      showsByGenres: []
+    };
+  },
+  methods: {
+    // Get top rating shows
+    getPopularShows(allShows) {
+      const topRating = 9;
+      const popularShows = allShows.filter(
+        show => show.rating.average >= topRating
+      );
+      popularShows.sort((a, b) => b.rating.average - a.rating.average);
+      return popularShows;
+    },
+
+    // Get all unique genres from all shows
+    getUniqueGenres(allShows) {
+      return [...new Set(allShows.map(show => show.genres).flat())].sort();
+    },
+
+    // Get shows per each genre and sort them according to rating
+    getShowsByGenres(allShows) {
+      const uniqueGeners = this.getUniqueGenres(allShows);
+      const showsByGenres = uniqueGeners.map(genre => {
+        const shows = allShows
+          .filter(show => show.genres.includes(genre))
+          .sort((a, b) => b.rating.average - a.rating.average);
+        return { genre, shows };
+      });
+      return showsByGenres;
+    }
+  },
+
+  async created() {
+    const allShows = await getAllShows();
+    this.popularShows = await this.getPopularShows(allShows);
+    this.showsByGenres = await this.getShowsByGenres(allShows);
+  }
+};
+</script>
