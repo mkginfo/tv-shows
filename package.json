@@ -10,7 +10,8 @@
     "test:e2e:ci": "start-server-and-test preview http://localhost:4173/ 'cypress run --e2e'",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
@@ -34,6 +35,7 @@
     "eslint": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "^9.0.0",
+    "gh-pages": "^4.0.0",
     "jsdom": "^20.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",

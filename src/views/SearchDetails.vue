@@ -29,7 +29,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 import { getSearchShows } from "@/services/ShowsService";
 import mazeImage from "@/components/atoms/maze-image.vue";
 import {defineComponent} from "vue";

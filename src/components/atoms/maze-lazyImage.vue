@@ -2,7 +2,7 @@
   <img class="p-1 w-100" :src="srcImage" />
 </template>
 
-<script lang="ts">
+<script>
 export default {
   props: ["src"],
   data: () => ({ intersected: false }),
