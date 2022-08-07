@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <router-link :to="{ name: 'home' }" class="navbar-brand">
+        <router-link :to="{ name: 'dashboard' }" class="navbar-brand">
           <h1>MazeTV</h1>
         </router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

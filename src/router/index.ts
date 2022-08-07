@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import ErrorView from "../views/ErrorView.vue";
 import NotFound from "../views/NotFound.vue";
 import DashboardView from "../views/DashboardView.vue";
@@ -11,9 +10,9 @@ import AboutView from "../views/AboutView.vue";
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
-    meta: { title: "Home" },
+    name: "dashboard",
+    component: DashboardView,
+    meta: { title: "Dashboard" },
   },
   {
     path: "/show/:id",
