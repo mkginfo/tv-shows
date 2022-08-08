@@ -21,7 +21,7 @@
   </div>
 
 </template>
-<script lang="ts">
+<script>
 import { RouterLink } from "vue-router";
 import OverviewSection from "@/components/OverviewSection.vue";
 import {defineComponent} from "vue";
