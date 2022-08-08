@@ -50,7 +50,7 @@ export default defineComponent({
     mazeImage
   },
   filters: {
-    joinArray: (value: string[]) => {
+    joinArray: (value) => {
       if (!value) return "";
       return value.join(" | ");
     }
