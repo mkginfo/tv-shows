@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-md-3">
-        <maze-image :show-image="showInfo.image" />
+        <Image :show-image="showInfo.image" />
       </div>
       <div class="col-md-9">
         <div class="mb-4 mt-md-0 mt-lg-4" v-if="showInfo.name">
@@ -42,12 +42,12 @@
 </template>
 
 <script>
-import mazeImage from "@/components/atoms/maze-image.vue";
+import Image from "@/components/form/Image.vue";
 import {defineComponent} from "vue";
 export default defineComponent({
   props: { showInfo: { type: Object } },
   components: {
-    mazeImage
+    Image
   },
   filters: {
     joinArray: (value) => {

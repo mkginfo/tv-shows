@@ -2,7 +2,7 @@ import { describe, it, expect, afterEach, vi } from "vitest";
 
 import { mount } from "@vue/test-utils";
 
-import GoBackButton from "../GoBackButton.vue";
+import GoBackButton from "../ui/GoBackButton.vue";
 
 describe("GoBackButton", () => {
   let wrapper: any;

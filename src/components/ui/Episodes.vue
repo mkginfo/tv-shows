@@ -7,17 +7,17 @@
         v-for="(episode, index) in episodesList"
         :key="index"
       >
-        <a :href="episode.url"><maze-image :show-image="episode.image"/></a>
+        <a :href="episode.url"><Image :show-image="episode.image"/></a>
         <div class="text-center">{{ episode.number }} {{ episode.name }}</div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import mazeImage from "@/components/atoms/maze-image.vue";
+import Image from "@/components/form/Image.vue";
 export default {
   components: {
-    mazeImage
+    Image
   },
   props: {
     seasonNumber: { type: [Number, String] },

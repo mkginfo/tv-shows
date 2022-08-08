@@ -14,10 +14,11 @@ import { onMounted} from "vue";
             class="show-card"
         >
             <router-link
+                class="text-decoration-none"
               :to="{ name: 'show-details', params: { id: show.id } }"
             >
               <div class="show">
-                <lazyImage :src="show.image.medium" />
+                <LazyImage :src="show.image.medium" />
                 <div class="show-overlay"></div>
                 <div class="show-details text-light fadeIn-bottom">
                   <h3 class="text-uppercase">Rating</h3>
@@ -25,7 +26,7 @@ import { onMounted} from "vue";
                   <div class="show-year">{{show.premiered}}</div>
                   <a class="text-light">View show</a>
                 </div>
-                <div class="col-12 text-truncate text-center text-decoration-none">
+                <div class="col-12 text-truncate text-center">
                   {{show.name}}
                 </div>
               </div>
@@ -39,10 +40,10 @@ import { onMounted} from "vue";
 </template>
 
 <script>
-import OverviewSection from "@/components/OverviewSection.vue";
-import lazyImage from "@/components/atoms/maze-lazyImage.vue";
+import OverviewSection from "@/components/ui/OverviewSection.vue";
+import LazyImage from "@/components/form/LazyImage.vue";
 export default {
-  components: { lazyImage, OverviewSection },
+  components: { LazyImage, OverviewSection },
   props: {
     genresData: { type: Array, required: true }
   }

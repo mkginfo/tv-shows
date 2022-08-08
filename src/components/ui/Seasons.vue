@@ -14,7 +14,7 @@
               params: { id: showId, seasonNumber: season.number }
             }"
           >
-            <maze-image :show-image="season.image" />
+            <Image :show-image="season.image" />
             <div class="text-center">Season {{ season.number }}</div>
           </router-link>
         </div>
@@ -23,10 +23,10 @@
   </div>
 </template>
 <script>
-import mazeImage from "@/components/atoms/maze-image.vue";
+import Image from "@/components/form/Image.vue";
 export default {
   components: {
-    mazeImage
+    Image
   },
   props: { seasons: { type: Array }, showId: { type: [Number, String] } }
 };

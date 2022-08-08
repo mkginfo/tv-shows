@@ -6,7 +6,7 @@ const router = useRouter();
 
 <template>
   <button class="go-back-button" @click="router.go(-1)">
-    👈 Go back to home
+    👈 Go back to previous screen
   </button>
 </template>
 

@@ -11,15 +11,15 @@
 </template>
 
 <script>
+import {defineComponent} from "vue";
 import { getAllShows } from "@/services/ShowsService";
-import TVShowGenre from "@/components/organisms/TVShowGenre.vue";
-import TVShowPopular from "@/components/organisms/TVShowPopular.vue";
-import mazeSearch from "@/components/atoms/maze-search.vue";
-export default {
+import TVShowGenre from "@/components/ui/TVShowGenre.vue";
+import TVShowPopular from "@/components/ui/TVShowPopular.vue";
+
+export default defineComponent({
   components: {
     TVShowGenre,
-    TVShowPopular,
-    mazeSearch,
+    TVShowPopular
   },
   data() {
     return {
@@ -61,5 +61,5 @@ export default {
     this.popularShows = await this.getPopularShows(allShows);
     this.showsByGenres = await this.getShowsByGenres(allShows);
   }
-};
+});
 </script>

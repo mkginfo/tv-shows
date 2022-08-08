@@ -15,7 +15,7 @@
                 params: { id: show.show.id, showData: show.show }
               }"
             >
-              <maze-image :show-image="show.show.image" />
+              <Image :show-image="show.show.image" />
             </router-link>
             <div class="text-secondary text-center">{{ show.show.name }}</div>
           </div>
@@ -31,11 +31,11 @@
 </template>
 <script>
 import { getSearchShows } from "@/services/ShowsService";
-import mazeImage from "@/components/atoms/maze-image.vue";
+import Image from "@/components/form/Image.vue";
 import {defineComponent} from "vue";
 export default defineComponent({
   components: {
-    mazeImage
+    Image
   },
 
   data() {

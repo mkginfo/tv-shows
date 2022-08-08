@@ -15,18 +15,23 @@
                 Dashboard
               </router-link>
             </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'about' }" class="nav-link active" aria-current="page">
+                About
+              </router-link>
+            </li>
           </ul>
-          <maze-search />
+          <Search />
         </div>
       </div>
     </nav>
   </header>
 </template>
 <script>
-import mazeSearch from "@/components/atoms/maze-search.vue";
+import Search from "@/components/form/Search.vue";
 export default {
   components: {
-    mazeSearch
+    Search
   }
 };
 </script>

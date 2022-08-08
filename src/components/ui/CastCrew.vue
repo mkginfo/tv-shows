@@ -1,5 +1,5 @@
 <script setup>
-import OverviewSection from "@/components/OverviewSection.vue";
+import OverviewSection from "@/components/ui/OverviewSection.vue";
 </script>
 
 <template>

@@ -2,7 +2,7 @@ import { describe, it, expect, afterEach } from "vitest";
 
 import { mount } from "@vue/test-utils";
 
-import SearchBar from "../SearchBar.vue";
+import SearchBar from "../ui/SearchBar.vue";
 
 describe("SearchBar", () => {
   let wrapper: any;

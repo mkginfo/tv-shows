@@ -4,10 +4,10 @@ import { useRoute } from "vue-router";
 
 import { useStore } from "../stores";
 
-import HorizontalSection from "@/components/HorizontalSection.vue";
-import CastCard from "@/components/CastCard.vue";
-import GoBackButton from "@/components/GoBackButton.vue";
-import LoadingSpinner from "@/components/LoadingSpinner.vue";
+import HorizontalSection from "@/components/ui/HorizontalSection.vue";
+import CastCard from "@/components/ui/CastCard.vue";
+import GoBackButton from "@/components/ui/GoBackButton.vue";
+import LoadingSpinner from "@/components/ui/LoadingSpinner.vue";
 
 const route = useRoute();
 const store = useStore();

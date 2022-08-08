@@ -233,7 +233,7 @@ export interface Network {
 }
 
 export interface Rating {
-  average: number;
+  average: number | undefined;
 }
 
 /*export interface Schedule {

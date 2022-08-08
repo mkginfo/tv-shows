@@ -6,9 +6,9 @@ import { useStore } from "@/stores";
 import { GENRES } from "@/constants";
 
 import HorizontalSection from "@/components/HorizontalSection.vue";
-import ShowCard from "@/components/ShowCard.vue";
-import SearchBar from "@/components/SearchBar.vue";
-import LoadingSpinner from "@/components/LoadingSpinner.vue";
+import ShowCard from "@/components/ui/ShowCard.vue";
+import SearchBar from "@/components/ui/SearchBar.vue";
+import LoadingSpinner from "@/components/ui/LoadingSpinner.vue";
 
 const route = useRoute();
 const router = useRouter();

@@ -8,7 +8,7 @@
               params: { id: show.id, showData: show }
             }"
           >
-            <lazyImage :src="show.image.medium" />
+            <LazyImage :src="show.image.medium" />
           </RouterLink>
           <div class="show-content h-50">
             <span>{{ show.name }}</span>&nbsp;
@@ -23,11 +23,11 @@
 </template>
 <script>
 import { RouterLink } from "vue-router";
-import OverviewSection from "@/components/OverviewSection.vue";
-import lazyImage from "@/components/atoms/maze-lazyImage.vue";
+import OverviewSection from "@/components/ui/OverviewSection.vue";
+import LazyImage from "@/components/form/LazyImage.vue";
 import {defineComponent} from "vue";
 export default defineComponent({
-  components: {lazyImage, OverviewSection},
+  components: {LazyImage, OverviewSection},
   props: {
     popularShows: { type: Array, required: true }
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="tv-shows-episodes-content">
     <div class="container pt-4">
-      <maze-episodes
+      <Episodes
         :season-number="seasonNumber"
         :episodes-list="episodesList"
       />
@@ -10,10 +10,10 @@
 </template>
 <script>
 import { getEpisodes } from "@/services/ShowsService";
-import mazeEpisodes from "@/components/molecules/maze-episodes.vue";
+import Episodes from "@/components/ui/Episodes.vue";
 export default {
   components: {
-    mazeEpisodes
+    Episodes
   },
   data() {
     return {

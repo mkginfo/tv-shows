@@ -2,7 +2,7 @@ import { describe, it, expect, afterEach } from "vitest";
 
 import { mount } from "@vue/test-utils";
 
-import CastCard from "../CastCard.vue";
+import CastCard from "../ui/CastCard.vue";
 
 describe("CastCard", () => {
   let wrapper: any;

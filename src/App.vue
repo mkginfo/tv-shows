@@ -1,15 +1,15 @@
 <template>
-  <maze-header />
+  <Header />
   <RouterView />
 </template>
 
 <script lang="ts">
 import { RouterView } from "vue-router";
 import { computed, defineComponent } from 'vue';
-import mazeHeader from "@/components/molecules/maze-header.vue";
+import Header from "@/components/ui/Header.vue";
 
 export default defineComponent({
-  components: { mazeHeader },
+  components: { Header },
 })
 </script>
 
