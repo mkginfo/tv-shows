@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-xs navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
       <div class="container">
         <router-link :to="{ name: 'dashboard' }" class="navbar-brand">
           <h1>TV Shows</h1>
