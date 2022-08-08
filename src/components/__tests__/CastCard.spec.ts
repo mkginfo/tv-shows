@@ -28,7 +28,7 @@ describe("CastCard", () => {
     createComponent({ name: "John Doe" });
 
     expect(wrapper.find(".cast-card__image").attributes("src")).toBe(
-      "@/assets/default_person.png"
+      "@/assets/images/default_person.png"
     );
   });
 });
