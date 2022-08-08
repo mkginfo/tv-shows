@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import mazeImage from "@/components/atoms/maze-image.vue";
 import {defineComponent} from "vue";
 export default defineComponent({
