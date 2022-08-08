@@ -2,7 +2,7 @@
   <div class="tv-shows-content">
     <div class="container pt-4">
       <div class="px-4 pt-5 mt-5 text-center">
-        <div class="display-4 fs-1 fw-bold text-secondary">Welcome to Vue-TV</div>
+        <div class="display-4 fs-1 fw-bold text-secondary">Welcome to TVShows</div>
       </div>
       <TVShowPopular v-if="popularShows.length > 0" :popular-shows="popularShows"/>
       <TVShowGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
