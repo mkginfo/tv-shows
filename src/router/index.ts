@@ -4,7 +4,7 @@ import DashboardView from "../views/DashboardView.vue";
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
+    name: "home",
     component: DashboardView,
     meta: { title: "Dashboard" },
   },
@@ -15,7 +15,7 @@ const routes = [
     meta: { title: "Show Details" },
   },
   {
-    path: "/dashboard",
+    path: "/home",
     name: "dashboard",
     component: () => import("../views/DashboardView.vue"),
     meta: { title: "Dashboard" },
