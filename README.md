@@ -144,32 +144,31 @@ tv-shows
 │   │   │   ├── CastCard.spec.ts
 │   │   │   ├── GoBackButton.spec.ts
 │   │   │   └── SearchBar.spec.ts
-│   │   ├── atoms
-│   │   │   ├── maze-image.vue
-│   │   │   ├── maze-lazyImage.vue
-│   │   │   └── maze-search.vue
+│   │   ├── form
+│   │   │   ├── Image.vue
+│   │   │   ├── LazyImage.vue
+│   │   │   ├── GoBackButton.vue
+│   │   │   ├── Search.vue
+│   │   │   └── SearchBar.vue
 │   │   ├── icons
 │   │   │   ├── IconCommunity.vue
 │   │   │   ├── IconDocumentation.vue
 │   │   │   ├── IconEcosystem.vue
 │   │   │   ├── IconSupport.vue
 │   │   │   └── IconTooling.vue
-│   │   ├── molecules
-│   │   │   ├── maze-cast-crew.vue
-│   │   │   ├── maze-episodes.vue
-│   │   │   ├── maze-header.vue
-│   │   │   ├── maze-seasons.vue
-│   │   │   └── maze-showInfo.vue
-│   │   ├── organisms
-│   │   │   ├── MazeGenre.vue
-│   │   │   └── MazePopular.vue
-│   │   ├── CastCard.vue
-│   │   ├── GoBackButton.vue
-│   │   ├── HorizontalSection.vue
-│   │   ├── LoadingSpinner.vue
-│   │   ├── OverviewSection.vue
-│   │   ├── SearchBar.vue
-│   │   └── ShowCard.vue
+│   │   ├── ui
+│   │   │   ├── CastCrew.vue
+│   │   │   ├── Episodes.vue
+│   │   │   ├── Header.vue
+│   │   │   ├── Seasons.vue
+│   │   │   └── TVShowInfo.vue
+│   │   │   ├── TVShowGenre.vue
+│   │   │   └── TVShowPopular.vue
+│   │   │   ├── CastCard.vue
+│   │   │   ├── HorizontalSection.vue
+│   │   │   ├── LoadingSpinner.vue
+│   │   │   ├── OverviewSection.vue
+│   │   │   └── ShowCard.vue
 │   ├── constants
 │   │   └──index.ts
 │   ├── models
