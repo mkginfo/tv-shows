@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div class="mx-3 my-4">
       <OverviewSection :shows="popularShows" :name="`Popular shows`">
-        <figure v-for="(show, index) in popularShows" :key="index" :index="index">
+        <figure class="col-4" v-for="(show, index) in popularShows" :key="index" :index="index">
           <RouterLink
             :to="{
               name: 'show-details',
               params: { id: show.id, showData: show }
             }"
           >
-            <img :src="show.image.medium" />
+            <lazyImage :src="show.image.medium" />
           </RouterLink>
-          <div class="show-content">
-            <span>{{ show.name }}</span>
+          <div class="show-content h-50">
+            <span>{{ show.name }}</span>&nbsp;
             <span class="float-right text-primary">
               {{ show.rating.average }}/{{ ratedBy }}
             </span>
@@ -24,9 +24,10 @@
 <script>
 import { RouterLink } from "vue-router";
 import OverviewSection from "@/components/OverviewSection.vue";
+import lazyImage from "@/components/atoms/maze-lazyImage.vue";
 import {defineComponent} from "vue";
 export default defineComponent({
-  components: {OverviewSection},
+  components: {lazyImage, OverviewSection},
   props: {
     popularShows: { type: Array, required: true }
   },
@@ -38,6 +39,13 @@ export default defineComponent({
   padding: 12px;
   font-size: 18px;
   font-weight: 600;
-  background-color: white;
+  background-color: lightblue;
+}
+
+@media (max-width: 480px)   {
+  .show-content {
+    font-size: 10px;
+    height: 45px !important;
+  }
 }
 </style>

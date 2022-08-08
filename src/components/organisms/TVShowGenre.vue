@@ -25,10 +25,11 @@ import { onMounted} from "vue";
                   <div class="show-year">{{show.premiered}}</div>
                   <a class="text-light">View show</a>
                 </div>
+                <div class="col-12 text-truncate text-center text-decoration-none">
+                  {{show.name}}
+                </div>
               </div>
-              <div class="col-12 text-truncate text-center text-decoration-none">
-                {{show.name}}
-              </div>
+
             </router-link>
           </div>
         </OverviewSection>

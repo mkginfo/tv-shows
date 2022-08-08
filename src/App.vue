@@ -16,10 +16,4 @@ export default defineComponent({
 
 <style scoped>
 @import "@/assets/base.css";
-
-#app {
-  min-height: 100vh;
-  margin: 0 auto;
-  font-weight: normal;
-}
 </style>
