@@ -106,6 +106,15 @@ yarn run lint
 prettier --check --write "**/*.{js,ts,scss,css,json,html}"
 ```
 
+### TO DO
+- [x] ~~Add unit tests~~
+- [ ] Improve code coverage with more unit tests
+- [x] ~~Improve loading states~~
+- [x] ~~Find a way to optimize image loads~~
+- [ ] Filter shows by genre and/or rating
+- [x] ~~List Seasons and Episodes~~
+- [ ] Show info about the cast members
+
 ###  Folder Structure
 
 ```
