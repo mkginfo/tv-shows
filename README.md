@@ -3,7 +3,9 @@
 TVShow App is a Vue 3 application that allows you to browse TV Shows via tvmaze API. It is two days challenge part of an interview process for a frontend job position.
 
 For this project I decided to use Vue.js v3 in combination with TypeScript, Vuex and Vue Router.
-Basic project setup has configured via Vue 3 in Vite.
+Basic project setup has configured via Vue 3 in Vite. 
+
+[DEMO URL - ](https://mkginfo.github.io/tv-shows/) https://mkginfo.github.io/tv-shows/
 
 [![Tvmaze](http://static.tvmaze.com/images/api/tvm_api.png)](http://www.tvmaze.com/api "Tvmaze")
 
@@ -70,6 +72,13 @@ yarn run dev
 
 ```sh
 yarn run build
+```
+
+### Deployment for Production - 
+- https://mkginfo.github.io/tv-shows/
+
+```sh
+yarn run deploy
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
