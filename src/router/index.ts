@@ -1,17 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import ErrorView from "../views/ErrorView.vue";
-import NotFound from "../views/NotFound.vue";
 import DashboardView from "../views/DashboardView.vue";
-import ShowDetails from "../views/ShowDetails.vue";
-import ShowEpisodes from "../views/ShowEpisodes.vue";
-import SearchDetails from "../views/SearchDetails.vue";
-import AboutView from "../views/AboutView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "dashboard",
-    component: DashboardView,
+    name: "Dashboard",
+    component: () => DashboardView,
     meta: { title: "Dashboard" },
   },
   {
@@ -23,43 +17,43 @@ const routes = [
   {
     path: "/dashboard",
     name: "dashboard",
-    component: DashboardView,
+    component: () => import("../views/DashboardView.vue"),
     meta: { title: "Dashboard" },
   },
   {
     path: "/about",
     name: "about",
-    component: AboutView,
+    component: () => import("../views/AboutView.vue"),
     meta: { title: "About" },
   },
   {
     path: "/showDetails/:id",
     name: "show-details",
     props: true,
-    component: ShowDetails,
+    component: () => import("../views/ShowDetails.vue"),
     meta: { title: "Show details" },
   },
   {
     path: "/show/:id/season/:seasonNumber",
     name: "episodes",
     props: true,
-    component: ShowEpisodes,
+    component: () => import("../views/ShowEpisodes.vue"),
     meta: { title: "Episodes" },
   },
   {
     path: "/searchDetails/:searchText",
     name: "search-details",
     props: true,
-    component: SearchDetails,
+    component: () => import("../views/SearchDetails.vue"),
     meta: { title: "Search details" },
   },
   {
     path: "/error",
-    component: ErrorView,
+    component: () => import("../views/ErrorView.vue"),
   },
   {
     path: "/:catchAll(.*)",
-    component: NotFound,
+    component: () => import("../views/NotFound.vue"),
     meta: { title: "Not Found" },
   },
 ];

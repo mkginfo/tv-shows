@@ -1,11 +1,12 @@
 <template>
   <div class="tv-shows-content">
     <div class="container pt-4">
-      <!-- <MazePopular
-      v-if="popularShows.length > 0"
-      :popular-shows="popularShows"
-    />-->
-    <MazeGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
+      <div class="px-4 pt-5 mt-5 text-center">
+        <div class="display-4 fs-1 fw-bold text-secondary">Welcome to Vue-TV</div>
+      </div>
+
+<!--  <MazePopular v-if="popularShows.length > 0" :popular-shows="popularShows"/>-->
+      <MazeGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
     </div>
   </div>
 </template>
@@ -13,10 +14,13 @@
 <script>
 import { getAllShows } from "@/services/ShowsService";
 import MazeGenre from "@/components/organisms/MazeGenre.vue";
-// import MazePopular from "@/components/organisms/MazePopular.vue";
+import MazePopular from "@/components/organisms/MazePopular.vue";
+import mazeSearch from "@/components/atoms/maze-search.vue";
 export default {
   components: {
-    MazeGenre
+    MazeGenre,
+    mazeSearch,
+    MazePopular
   },
   data() {
     return {

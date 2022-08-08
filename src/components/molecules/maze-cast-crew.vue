@@ -6,10 +6,10 @@ import OverviewSection from "@/components/OverviewSection.vue";
   <div>
     <div class="pt-4" v-if="castData.length > 0">
       <div class="row pt-4 pb-4">
-        <OverviewSection :shows="crewData" :name="`Cast`">
+        <OverviewSection :shows="castData" :name="`Cast`">
           <div
             class="col-md-2 col-4"
-            v-for="(cast, index) in crewData"
+            v-for="(cast, index) in castData"
             :key="index"
           >
             <img

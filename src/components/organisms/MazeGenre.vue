@@ -3,7 +3,7 @@ import { onMounted} from "vue";
 </script>
 <template>
 
-  <div class="mx-3 my-4 pt-4">
+  <div class="mx-3 my-4">
     <div v-for="(genre, index) in genresData" :key="index">
       <div class="pl-4 pr-4">
         <OverviewSection :shows="genre.shows" :name="`${genre.genre} shows`">
@@ -18,7 +18,6 @@ import { onMounted} from "vue";
             >
               <div class="show">
                 <lazyImage :src="show.image.medium" />
-                <div class="show-title">{{show.name}}</div>
                 <div class="show-overlay"></div>
                 <div class="show-details text-light fadeIn-bottom">
                   <h3 class="text-uppercase">Rating</h3>
@@ -26,6 +25,9 @@ import { onMounted} from "vue";
                   <div class="show-year">{{show.premiered}}</div>
                   <a class="text-light">View show</a>
                 </div>
+              </div>
+              <div class="col-12 text-truncate text-center text-decoration-none">
+                {{show.name}}
               </div>
             </router-link>
           </div>
@@ -39,7 +41,7 @@ import { onMounted} from "vue";
 import OverviewSection from "@/components/OverviewSection.vue";
 import lazyImage from "@/components/atoms/maze-lazyImage.vue";
 export default {
-  components: { lazyImage },
+  components: { lazyImage, OverviewSection },
   props: {
     genresData: { type: Array, required: true }
   }
@@ -70,10 +72,6 @@ export default {
 
 .show {
   position: relative;
-}
-
-.show-title {
-
 }
 
 .fadeIn-bottom {

@@ -145,11 +145,11 @@ section h2 :deep(a):hover > .main-title {
   transform: rotate(45deg);
 }
 .shows-container .slide-left {
-  background: linear-gradient(to right, black, rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, gray, rgba(255, 255, 255, 0));
   left: 0;
 }
 .shows-container .slide-left:hover {
-  background: #000;
+  background: linear-gradient(to left, black, rgba(255, 255, 255, 0));
 }
 .shows-container .slide-left::after {
   border-bottom: 2px solid #fff;
@@ -157,11 +157,11 @@ section h2 :deep(a):hover > .main-title {
   margin-left: -4px;
 }
 .shows-container .slide-right {
-  background: linear-gradient(to left, black, rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, gray, rgba(255, 255, 255, 0));
   right: 0;
 }
 .shows-container .slide-right:hover {
-  background: #000;
+  background: linear-gradient(to left, black, rgba(255, 255, 255, 0));
 }
 .shows-container .slide-right::after {
   border-top: 2px solid #fff;

@@ -67,6 +67,7 @@ export interface Show {
 
 export interface Embedded {
   cast?: Cast[];
+  crew?: Crew[];
   seasons?: Season[];
 }
 
@@ -75,6 +76,11 @@ export interface Cast {
   character?: Character;
   self?: boolean;
   voice?: boolean;
+}
+
+export interface Crew {
+  type:   string;
+  person: Person;
 }
 
 export interface Character {
@@ -99,8 +105,8 @@ export interface Person {
   name?: string;
   country?: Country;
   birthday?: Date | null;
-  deathday?: null;
-  gender?: Gender;
+  deathday?: Date | null;
+  gender?: Gender | null;
   image?: Image | null;
   updated?: number;
   _links?: CharacterLinks;
