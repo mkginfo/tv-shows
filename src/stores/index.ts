@@ -13,8 +13,8 @@ import type {
   SearchShow,
   StoreInterface,
 } from "@/models/tvmaze.model";
-import {Genre} from "@/models/tvmaze.model";
-import type {ShowDetails} from "@/models/tvmaze.model";
+import { Genre } from "@/models/tvmaze.model";
+import type { ShowDetails } from "@/models/tvmaze.model";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
