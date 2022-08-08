@@ -65,6 +65,28 @@ export interface Show {
   _embedded?: Embedded;
 }
 
+export interface Episodes {
+  id:       number;
+  url:      string;
+  name:     string;
+  season:   number;
+  number:   number;
+  type:     string;
+  airdate:  Date;
+  airtime:  string;
+  airstamp: Date;
+  runtime:  number;
+  rating:   Rating;
+  image:    Image;
+  summary:  string;
+  _links:   CharacterLinks;
+}
+
+export interface Rating {
+  average: number;
+}
+
+
 export interface Embedded {
   cast?: Cast[];
   crew?: Crew[];
@@ -233,7 +255,7 @@ export interface Network {
 }
 
 export interface Rating {
-  average: number | undefined;
+  average: number;
 }
 
 /*export interface Schedule {

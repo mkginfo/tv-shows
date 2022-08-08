@@ -1,7 +1,7 @@
 <template>
   <div class="tv-shows-search-content">
     <div class="container pt-4">
-      <div class="pl-4 pr-4 pt-1" v-if="shows.length > 0">
+      <div class="pl-4 pr-4 pt-1 mt-5" v-if="shows.length > 0">
         <h3 class="pt-4 text-secondary">Shows found "{{ searchText }}"</h3>
         <div class="row">
           <div

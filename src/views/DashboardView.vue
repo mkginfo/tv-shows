@@ -4,6 +4,9 @@
       <div class="px-4 pt-5 mt-5 text-center">
         <div class="display-4 fs-1 fw-bold text-secondary">Welcome to TVShows</div>
       </div>
+      <div class="m-2 p-2 d-xs-block d-sm-block d-md-none">
+        <Search />
+      </div>
       <TVShowPopular v-if="popularShows.length > 0" :popular-shows="popularShows"/>
       <TVShowGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
     </div>
@@ -15,11 +18,13 @@ import {defineComponent} from "vue";
 import { getAllShows } from "@/services/ShowsService";
 import TVShowGenre from "@/components/ui/TVShowGenre.vue";
 import TVShowPopular from "@/components/ui/TVShowPopular.vue";
+import Search from "@/components/form/Search.vue";
 
 export default defineComponent({
   components: {
     TVShowGenre,
-    TVShowPopular
+    TVShowPopular,
+    Search
   },
   data() {
     return {

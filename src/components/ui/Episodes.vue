@@ -13,15 +13,22 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import Image from "@/components/form/Image.vue";
-export default {
+import {defineComponent} from "vue";
+import type {PropType} from "vue";
+import type {Episodes} from "@/models/tvmaze.model";
+export default defineComponent({
   components: {
     Image
   },
   props: {
-    seasonNumber: { type: [Number, String] },
-    episodesList: { type: Array }
+    seasonNumber: {
+      type: [Number, String]
+    },
+    episodesList: {
+      type: Array as PropType<Episodes[]>,
+    }
   }
-};
+});
 </script>
