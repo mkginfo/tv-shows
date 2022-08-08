@@ -1,6 +1,6 @@
 <template>
-  <div class="pl-4 pr-4 pt-2">
-    <h3 class="text-secondary">Season {{ seasonNumber }} episodes</h3>
+  <div class="pl-4 pr-4 pt-2 mt-5">
+    <h3 class="text-secondary">{{ episodesList[0].name}} - Season {{ seasonNumber }} episodes</h3>
     <div class="row">
       <div
         class="col-md-2 col-6 mt-4"

@@ -1,7 +1,6 @@
 <template>
   <div class="tv-shows-episodes-content">
-    <div class="container pt-4">
-      <h3 class="text-secondary">Season {{ seasonNumber }} episodes</h3>
+    <div class="container pt-4 mt-4">
       <Episodes
           :season-number="seasonNumber"
           :episodes-list="episodesList"
@@ -25,7 +24,7 @@ export default {
   },
   methods: {
     getShowName() {
-      this.showName = this.episodesList[0].name
+      return this.episodesList[0].name;
     },
     episodesBySeason(allEpisodes) {
       this.seasonNumber = parseInt(this.$route.params.seasonNumber);
