@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
-
 import { useStore } from "../stores";
 
 import HorizontalSection from "@/components/ui/HorizontalSection.vue";

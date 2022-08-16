@@ -1,6 +1,10 @@
 <template>
   <div class="tv-shows-search-content">
     <div class="container pt-4">
+      <template v-if="store.areResultsLoading">
+        <LoadingSpinner />
+      </template>
+
       <div class="pl-4 pr-4 pt-1 mt-5" v-if="shows.length > 0">
         <h3 class="pt-4 text-secondary">Shows found "{{ searchText }}"</h3>
         <div class="row">
@@ -12,12 +16,12 @@
             <router-link
               :to="{
                 name: 'show-details',
-                params: { id: show.show.id, showData: show.show }
+                params: { id: show.id}
               }"
             >
-              <Image :show-image="show.show.image" />
+              <Image :show-image="show.image" />
             </router-link>
-            <div class="text-secondary text-center">{{ show.show.name }}</div>
+            <div class="text-secondary text-center">{{ show.name }}</div>
           </div>
         </div>
       </div>
@@ -29,18 +33,31 @@
     </div>
   </div>
 </template>
-<script>
-import { getSearchShows } from "@/services/ShowsService";
-import Image from "@/components/form/Image.vue";
+<script lang="ts">
 import {defineComponent} from "vue";
+import Image from "@/components/form/Image.vue";
+import { useRoute } from "vue-router";
+import { useStore } from "@/stores";
+import type { Show } from "@/models/tvmaze.model";
+import LoadingSpinner from "@/components/ui/LoadingSpinner.vue";
+
 export default defineComponent({
   components: {
-    Image
+    Image,
+    LoadingSpinner
   },
+  setup() {
+    const route = useRoute();
+    const store = useStore();
 
+    return {
+      store,
+      route
+    }
+  },
   data() {
     return {
-      shows: []
+      shows: [] as Show[]
     };
   },
 
@@ -52,8 +69,11 @@ export default defineComponent({
   },
 
   methods: {
-    async getSearchDetails(searchText) {
-      this.shows = await getSearchShows(searchText);
+    async getSearchDetails(searchText: string) {
+      if(await this.store.searchTextValue !== searchText) {
+        await this.store.fetchResults(searchText);
+      }
+      this.shows = await this.store.searchResults;
     }
   },
 
@@ -62,7 +82,7 @@ export default defineComponent({
   },
 
   beforeRouteUpdate(to, from, next) {
-    this.getSearchDetails(to.params.searchText);
+    this.getSearchDetails(to.params.searchText as string);
     next();
   }
 });

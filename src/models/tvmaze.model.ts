@@ -5,7 +5,12 @@ export interface loading {
 }
 
 export interface StoreInterface {
-  _homeSelection: GenreShow | null;
+  _allShows: Show[],
+  _allGenres: Genre[],
+  _homeSelection: GenreShow;
+  _showsByGenres: ShowByGenre[];
+  _popularShows: Show[];
+  _searchText: string,
   _results: Show[];
   _showDetails: ShowDetails | null;
   loading: loading;
@@ -32,6 +37,11 @@ export interface SearchShow {
 
 export type GenreShow = {
   [key in Genre]?: Show;
+};
+
+export interface ShowByGenre {
+  genre: Genre;
+  shows: Show[];
 };
 
 export type GenreListShow = {

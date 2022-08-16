@@ -1,8 +1,4 @@
-<script setup>
-import { onMounted} from "vue";
-</script>
 <template>
-
   <div class="mx-3 my-4">
     <div v-for="(genre, index) in genresData" :key="index">
       <div class="pl-4 pr-4">
@@ -18,11 +14,11 @@ import { onMounted} from "vue";
               :to="{ name: 'show-details', params: { id: show.id } }"
             >
               <div class="show">
-                <LazyImage :src="show.image.medium" />
+                <LazyImage :src="show.image?.medium" />
                 <div class="show-overlay"></div>
                 <div class="show-details text-light fadeIn-bottom">
                   <h3 class="text-uppercase">Rating</h3>
-                  <p>{{ show.rating.average }}/10</p>
+                  <p>{{ show.rating?.average }}/10</p>
                   <div class="show-year">{{show.premiered}}</div>
                   <a class="text-light">View show</a>
                 </div>
@@ -39,15 +35,18 @@ import { onMounted} from "vue";
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import OverviewSection from "@/components/ui/OverviewSection.vue";
 import LazyImage from "@/components/form/LazyImage.vue";
-export default {
+import {defineComponent} from "vue";
+import type { PropType } from "vue";
+import type { ShowByGenre} from "@/models/tvmaze.model";
+export default defineComponent({
   components: { LazyImage, OverviewSection },
   props: {
-    genresData: { type: Array, required: true }
+    genresData: { type:  Array as PropType<ShowByGenre[]>, required: true }
   }
-};
+});
 </script>
 <style scoped>
 .show-card {

@@ -30,11 +30,8 @@ export const getShow = (id: number) =>
   apiClient.get(`/shows/${id}?embed[]=seasons&embed[]=cast&embed[]=crew`);
 
 // Api request to search shows
-export const getSearchShows = (searchText: string) =>
+export const getSearchShows = (searchText: string): Promise<SearchShow[]> =>
   apiClient.get(`/search/shows?q=${searchText}`);
-
-export const searchByTerm = (term = ""): Promise<SearchShow[]> =>
-  apiClient.get(`/search/shows?q=${term}`);
 
 export const getShowDetails = (id: number): Promise<Show> =>
   apiClient.get(`/shows/${id}?embed[]=cast&embed[]=seasons`);
@@ -44,6 +41,5 @@ export default {
   getEpisodes,
   getShow,
   getSearchShows,
-  searchByTerm,
   getShowDetails,
 };

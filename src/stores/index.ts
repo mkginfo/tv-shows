@@ -1,19 +1,20 @@
 import { defineStore } from "pinia";
 
-import ShowsApi from "@/services/ShowsService";
+import ShowsApi, {getSearchShows} from "@/services/ShowsService";
 import {
-  formatShows,
-  mapShowsByGenre,
   extractGenres,
-  generateNewListByGenre,
+  mapShowsByGenre,
+  shortShows,
+  getPopularShows,
+  getShowsByGenres
 } from "@/utils";
 import type {
-  GenreShow,
-  Show,
   SearchShow,
+  Show,
   StoreInterface,
+  ShowByGenre
 } from "@/models/tvmaze.model";
-import { Genre } from "@/models/tvmaze.model";
+import type {Genre, GenreShow} from "@/models/tvmaze.model";
 import type { ShowDetails } from "@/models/tvmaze.model";
 import { useRoute } from "vue-router";
 
@@ -21,8 +22,13 @@ const route = useRoute();
 
 export const useStore = defineStore("main", {
   state: (): StoreInterface => ({
-    _homeSelection: null,
-    _results: [],
+    _allShows: [] as Show[],
+    _allGenres: [],
+    _homeSelection: [] as GenreShow,
+    _popularShows: [] as Show[],
+    _showsByGenres: [] as ShowByGenre[],
+    _searchText: '',
+    _results: [] as Show[],
     _showDetails: null,
     loading: {
       sections: false,
@@ -31,7 +37,12 @@ export const useStore = defineStore("main", {
     },
   }),
   getters: {
+    allShows: (state: StoreInterface) => state._allShows,
+    allGenres: (state: StoreInterface) => state._allGenres,
     homeSelection: (state: StoreInterface) => state._homeSelection,
+    popularShows: (state: StoreInterface) => state._popularShows,
+    showsByGenres: (state: StoreInterface) => state._showsByGenres,
+    searchTextValue: (state: StoreInterface) => state._searchText,
     searchResults: (state: StoreInterface) => state._results,
     showDetails: (state: StoreInterface) => state._showDetails,
     areSectionsLoading: (state: StoreInterface) => state.loading.sections,
@@ -39,27 +50,43 @@ export const useStore = defineStore("main", {
     areDetailsLoading: (state: StoreInterface) => state.loading.details,
   },
   actions: {
-    async generateHomeSelection() {
+    async setAllShow() {
       this.loading.sections = true;
-
       const allShows = await ShowsApi.getAllShows();
-      const shows = formatShows(allShows);
-      const byGenre = mapShowsByGenre(shows, Object.keys(Genre) as Genre[]);
-
-      // const category = (show: Show[]) => extractGenres(show);
-      // const moviesByCategory = (show: Show[])  =>
-      //     generateNewListByGenre(show, extractGenres(show));
-
-      this._homeSelection = byGenre;
+      this._allShows = allShows;
       this.loading.sections = false;
     },
-    async fetchResults(term: any) {
-      this.loading.results = true;
-      const allShows = await ShowsApi.searchByTerm(term);
+    async setAllGenres(shows: Show[]) {
+      this.loading.sections = true;
+      this._allGenres = extractGenres(shows);
+      this.loading.sections = false;
+    },
+    async generateHomeSelection(shows: Show[]) {
+      this.loading.sections = true;
+      this._homeSelection = mapShowsByGenre(shows);
+      this.loading.sections = false;
+    },
 
-      this._results = formatShows(allShows.map((res: SearchShow) => res.show));
+    async setPopularShows(shows: Show[]) {
+      this.loading.sections = true;
+      this._popularShows = getPopularShows(shows);
+      this.loading.sections = false;
+    },
+
+    async setShowsByGenres(shows: Show[]) {
+      this.loading.sections = true;
+      this._showsByGenres = getShowsByGenres(shows);
+      this.loading.sections = false;
+    },
+
+    async fetchResults(searchText: string) {
+      this.loading.results = true;
+      this._searchText = searchText;
+      const searchShows = await ShowsApi.getSearchShows(searchText);
+      this._results = shortShows(searchShows.map((res: SearchShow) => res.show));
       this.loading.results = false;
     },
+
     async fetchShowDetails(id: number) {
       this.loading.details = true;
       const show = await ShowsApi.getShowDetails(id);
@@ -77,9 +104,11 @@ export const useStore = defineStore("main", {
       } as ShowDetails;
       this.loading.details = false;
     },
+
     removeShowDetails() {
       this._showDetails = null;
     },
+
     searchText() {
       return route.query?.q;
     },
