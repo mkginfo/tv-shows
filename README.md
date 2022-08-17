@@ -41,8 +41,6 @@ which makes it very easy for a developer to find the right line of code to chang
 - Node v16 (NPM v8.5)
 - Yarn v1.22
 
-## Project Setup
-
 ### Tech stack and requirements
 - Vue 3 for the UI
 - Axios for http requests
@@ -67,6 +65,8 @@ The project follows the recommended structure Vue proposes.
 #### Mobile first approach
 All the styling was made with the idea that mobile is the main device.
 I have used bootstrap grid system to adapt the elements to a wider and smaller screen device.
+
+## Project Setup
 
 ```sh
 yarn install
