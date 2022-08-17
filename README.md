@@ -192,12 +192,10 @@ tv-shows
 │   │   └── index.ts
 │   ├── views
 │   │   ├── AboutView.vue
-│   │   ├── DashboardView.vue
 │   │   ├── ErrorView.vue
 │   │   ├── HomeView.vue
 │   │   ├── NotFound.vue
 │   │   ├── SearchDetails.vue
-│   │   ├── SearchTVShowView.vue
 │   │   ├── ShowDetails.vue
 │   │   ├── ShowDetailsView.vue
 │   │   └── ShowEpisodes.vue
