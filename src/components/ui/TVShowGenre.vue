@@ -56,7 +56,7 @@ export default defineComponent({
   border-radius: var(--border-radius);
   transition: all 0.2s;
   width: 120px;
-  height: 160px;
+  height: 100%;
 }
 
 .show-card:hover {
