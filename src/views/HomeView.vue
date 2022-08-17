@@ -13,11 +13,8 @@
       </template>
 
       <TVShowPopular v-if="popularShows.length > 0" :popular-shows="popularShows"/>
+      <TVShowGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
     </div>
-  </div>
-
-  <div class="container pt-4">
-    <TVShowGenre v-if="showsByGenres.length > 0" :genresData="showsByGenres" />
   </div>
 
 </template>
