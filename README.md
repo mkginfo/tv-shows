@@ -14,21 +14,6 @@ Also, categorize in genres and functionality to search. And it is mobile respons
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
@@ -57,6 +42,31 @@ which makes it very easy for a developer to find the right line of code to chang
 - Yarn v1.22
 
 ## Project Setup
+
+### Tech stack and requirements
+- Vue 3 for the UI
+- Axios for http requests
+- Pinia for state management
+
+#### Should I use state management for this small project?
+The decision of adding an extra layer of complexity and dependencies was taken for two reasons:
+1. To have all the info presented in the home page in memory because the process of getting all the shows and grouping it by genres takes time.
+2. To separate all the logic from the UI components.
+
+#### Project strucure
+The project follows the recommended structure Vue proposes.
+
+- `/components` -> all UI components, render content based on it owns props (no access to store, router, etc).
+- `/views` -> all container components used in the router, they interact with the store and router and pass props to the presentational components.
+- `/router` -> define routes (lazy load all but homepage).
+- `/models` -> define custom datatype based on tvmaze service response and component, store requirements .
+- `/services` -> axios instance of tvmaze API and related methods.
+- `/store` -> implement all the logic related to calling the API and processing the shows.
+- `/utils` -> utility functions as sort shows by average rating, group by genre, etc.
+
+#### Mobile first approach
+All the styling was made with the idea that mobile is the main device.
+I have used bootstrap grid system to adapt the elements to a wider and smaller screen device.
 
 ```sh
 yarn install

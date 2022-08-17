@@ -9,12 +9,6 @@ const routes = [
     meta: { title: "Home" },
   },
   {
-    path: "/show/:id",
-    name: "showDetails",
-    component: () => import("../views/ShowDetailsView.vue"),
-    meta: { title: "Show Details" },
-  },
-  {
     path: "/about",
     name: "about",
     component: () => import("../views/AboutView.vue"),
