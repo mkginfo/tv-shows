@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
       <div class="container">
         <router-link :to="{ name: 'home' }" class="navbar-brand">
-          <h1>TV Shows</h1>
+          <h1 class="logo">TV Shows</h1>
         </router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

@@ -2,7 +2,7 @@
   <form class="d-flex" role="search">
     <input
       v-model="searchTextValue"
-      class="form-control me-2"
+      class="searchbar__input form-control me-2"
       type="search"
       placeholder="Search"
       aria-label="Search" />
